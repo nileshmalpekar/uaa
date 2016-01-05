@@ -14,6 +14,7 @@
 
 package org.cloudfoundry.identity.uaa.oauth.token;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class Claims {
     @JsonProperty(ClaimConstants.EXP)
     private Integer exp;
     @JsonProperty(ClaimConstants.AUTHORITIES)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<String> authorities;
     @JsonProperty(ClaimConstants.SCOPE)
     private List<String> scope;
